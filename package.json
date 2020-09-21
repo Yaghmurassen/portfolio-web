@@ -9,12 +9,8 @@
     "clean": "rm -rf dist/*",
     "build:parcel": "parcel build src/index.html --no-content-hash --no-minify --no-source-maps --public-url ./",
     "build": "npm run clean && npm run build:parcel",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build:parcel",
     "deploy": "gh-pages -d build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/codrops/[NAME].git"
   },
   "keywords": [],
   "author": "Yaghmurassen Sainson",
