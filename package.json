@@ -1,7 +1,7 @@
 {
-  "name": "DiagonalThumbnails",
+  "name": "portfolio-web",
   "version": "1.0.0",
-  "description": "",
+  "description": "Yaghmurassen Sainson Portfolio",
   "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html --open",
@@ -14,13 +14,10 @@
     "url": "git://github.com/codrops/[NAME].git"
   },
   "keywords": [],
-  "author": "Codrops",
-  "license": "MIT",
-  "homepage": "[HOMEPAGE]",
-  "bugs": {
-    "url": "https://github.com/codrops/[NAME]/issues"
-  },
+  "author": "Yaghmurassen Sainson",
+  "homepage": "",
   "dependencies": {
+    "gh-pages": "^3.1.0",
     "gsap": "^3.5.0",
     "imagesloaded": "^4.1.4",
     "parcel": "^1.12.4",
