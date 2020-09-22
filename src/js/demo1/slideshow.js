@@ -127,11 +127,22 @@ export default class Slideshow {
           },
           x: "0%",
           y: "0%",
-          opacity: 0.6,
+          opacity: 1,
           ease: "power4",
         },
         "upcoming"
+      )
+
+      .to(
+        nextSlide.DOM.el,
+        {
+          backgroundColor: "#3f51b58f",
+          // duration: 3,
+          ease: "Power2.easeInOut",
+        },
+        "-=1.5"
       );
+    console.log("currentSlide.DOM", currentSlide.DOM.el);
   }
   reverseDirection(direction) {
     return direction === "next" ? "prev" : "next";
