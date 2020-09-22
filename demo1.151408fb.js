@@ -6735,7 +6735,11 @@ var Slide = function Slide(el) {
 };
 
 exports.default = Slide;
-},{"splitting":"Qdhu"}],"Jcyn":[function(require,module,exports) {
+},{"splitting":"Qdhu"}],"l4HZ":[function(require,module,exports) {
+module.exports = "background-av.48d286fb.png";
+},{}],"b3X4":[function(require,module,exports) {
+module.exports = "Background.bda56739.png";
+},{}],"Jcyn":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6750,6 +6754,10 @@ require("splitting/dist/splitting-cells.css");
 var _gsap = require("gsap");
 
 var _slide = _interopRequireDefault(require("../slide"));
+
+var _backgroundAv = _interopRequireDefault(require("../../imgYag/AV/background-av.png"));
+
+var _Background = _interopRequireDefault(require("../../imgYag/DigitalIn/Background.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6902,9 +6910,40 @@ var Slideshow = /*#__PURE__*/function () {
         },
         x: "0%",
         y: "0%",
-        opacity: 0.6,
+        opacity: 1,
         ease: "power4"
-      }, "upcoming");
+      }, "upcoming"); // .to(
+      //   nextSlide.DOM.el,
+      //   {
+      //     backgroundColor: "#3f51b58f",
+      //     // duration: 3,
+      //     ease: "Power2.easeInOut",
+      //   },
+      //   "-=1.5"
+      // );
+      // console.log(
+      //   "nextSlide",
+      //   nextSlide.DOM.el.querySelector("[data-word='Crypto']")
+      // );
+      // console.log("currentSlide", currentSlide.DOM.el);
+
+
+      if (nextSlide.DOM.el.querySelector("[data-word='Blue']")) {
+        nextSlide.DOM.el.classList.add("text-bluesquare");
+        document.body.classList.add("background-bluesquare");
+      } else {
+        document.body.classList.remove("background-bluesquare");
+      }
+
+      if (nextSlide.DOM.el.querySelector("[data-word='Auto']")) {
+        document.body.style.background = "url(".concat(_backgroundAv.default, ")");
+      } else if (nextSlide.DOM.el.querySelector("[data-word='Digital']")) {
+        document.body.style.background = "url(".concat(_Background.default, ")");
+        document.body.style.backgroundPosition = "center";
+      } else {
+        document.body.style.background = null;
+        document.body.style.backgroundPosition = null;
+      }
     }
   }, {
     key: "reverseDirection",
@@ -6917,7 +6956,7 @@ var Slideshow = /*#__PURE__*/function () {
 }();
 
 exports.default = Slideshow;
-},{"splitting/dist/splitting.css":"oR66","splitting/dist/splitting-cells.css":"oR66","gsap":"TpQl","../slide":"Drnq"}],"C3Xv":[function(require,module,exports) {
+},{"splitting/dist/splitting.css":"oR66","splitting/dist/splitting-cells.css":"oR66","gsap":"TpQl","../slide":"Drnq","../../imgYag/AV/background-av.png":"l4HZ","../../imgYag/DigitalIn/Background.png":"b3X4"}],"C3Xv":[function(require,module,exports) {
 "use strict";
 
 var _utils = require("../utils");
@@ -6941,19 +6980,19 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 // Preload  images and fonts
-Promise.all([(0, _utils.preloadImages)('.slide__img'), (0, _utils.preloadFonts)('ldj8uhs')]).then(function () {
+Promise.all([(0, _utils.preloadImages)(".slide__img"), (0, _utils.preloadFonts)("ldj8uhs")]).then(function () {
   // Remove loader (loading class)
-  document.body.classList.remove('loading'); // Initialize custom cursor
+  document.body.classList.remove("loading"); // Initialize custom cursor
 
-  var cursor = new _cursor.default(document.querySelector('.cursor')); // Initialize the slideshow
+  var cursor = new _cursor.default(document.querySelector(".cursor")); // Initialize the slideshow
 
-  new _slideshow.default(document.querySelector('.slides')); // mouse cursor hovers
+  new _slideshow.default(document.querySelector(".slides")); // mouse cursor hovers
 
-  [].concat(_toConsumableArray(document.querySelectorAll('a')), _toConsumableArray(document.querySelectorAll('.slides__nav'))).forEach(function (link) {
-    link.addEventListener('mouseenter', function () {
+  [].concat(_toConsumableArray(document.querySelectorAll("a")), _toConsumableArray(document.querySelectorAll(".slides__nav"))).forEach(function (link) {
+    link.addEventListener("mouseenter", function () {
       return cursor.enter();
     });
-    link.addEventListener('mouseleave', function () {
+    link.addEventListener("mouseleave", function () {
       return cursor.leave();
     });
   });
