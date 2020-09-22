@@ -3,6 +3,7 @@ import "splitting/dist/splitting-cells.css";
 import { gsap } from "gsap";
 import Slide from "../slide";
 import bckgAv from "../../imgYag/AV/background-av.png";
+import bckgDigital from "../../imgYag/DigitalIn/Background.png";
 
 export default class Slideshow {
   constructor(el) {
@@ -159,9 +160,12 @@ export default class Slideshow {
 
     if (nextSlide.DOM.el.querySelector("[data-word='Auto']")) {
       document.body.style.background = `url(${bckgAv})`;
+    } else if (nextSlide.DOM.el.querySelector("[data-word='Digital']")) {
+      document.body.style.background = `url(${bckgDigital})`;
+      document.body.style.backgroundPosition = "center";
     } else {
-      console.log("tu dois cut");
-      document.body.style.background = "unset";
+      document.body.style.background = null;
+      document.body.style.backgroundPosition = null;
     }
   }
   reverseDirection(direction) {

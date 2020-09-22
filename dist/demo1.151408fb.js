@@ -6814,6 +6814,8 @@ var Slide = function Slide(el) {
 exports.default = Slide;
 },{"splitting":"../node_modules/splitting/dist/splitting.js"}],"imgYag/AV/background-av.png":[function(require,module,exports) {
 module.exports = "/background-av.48d286fb.png";
+},{}],"imgYag/DigitalIn/Background.png":[function(require,module,exports) {
+module.exports = "/Background.bda56739.png";
 },{}],"js/demo1/slideshow.js":[function(require,module,exports) {
 "use strict";
 
@@ -6831,6 +6833,8 @@ var _gsap = require("gsap");
 var _slide = _interopRequireDefault(require("../slide"));
 
 var _backgroundAv = _interopRequireDefault(require("../../imgYag/AV/background-av.png"));
+
+var _Background = _interopRequireDefault(require("../../imgYag/DigitalIn/Background.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -7010,9 +7014,12 @@ var Slideshow = /*#__PURE__*/function () {
 
       if (nextSlide.DOM.el.querySelector("[data-word='Auto']")) {
         document.body.style.background = "url(".concat(_backgroundAv.default, ")");
+      } else if (nextSlide.DOM.el.querySelector("[data-word='Digital']")) {
+        document.body.style.background = "url(".concat(_Background.default, ")");
+        document.body.style.backgroundPosition = "center";
       } else {
-        console.log("tu dois cut");
-        document.body.style.background = "unset";
+        document.body.style.background = null;
+        document.body.style.backgroundPosition = null;
       }
     }
   }, {
@@ -7026,7 +7033,7 @@ var Slideshow = /*#__PURE__*/function () {
 }();
 
 exports.default = Slideshow;
-},{"splitting/dist/splitting.css":"../node_modules/splitting/dist/splitting.css","splitting/dist/splitting-cells.css":"../node_modules/splitting/dist/splitting-cells.css","gsap":"../node_modules/gsap/index.js","../slide":"js/slide.js","../../imgYag/AV/background-av.png":"imgYag/AV/background-av.png"}],"js/demo1/index.js":[function(require,module,exports) {
+},{"splitting/dist/splitting.css":"../node_modules/splitting/dist/splitting.css","splitting/dist/splitting-cells.css":"../node_modules/splitting/dist/splitting-cells.css","gsap":"../node_modules/gsap/index.js","../slide":"js/slide.js","../../imgYag/AV/background-av.png":"imgYag/AV/background-av.png","../../imgYag/DigitalIn/Background.png":"imgYag/DigitalIn/Background.png"}],"js/demo1/index.js":[function(require,module,exports) {
 "use strict";
 
 var _utils = require("../utils");
@@ -7095,7 +7102,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61023" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56128" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
