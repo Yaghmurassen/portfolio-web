@@ -6812,7 +6812,9 @@ var Slide = function Slide(el) {
 };
 
 exports.default = Slide;
-},{"splitting":"../node_modules/splitting/dist/splitting.js"}],"js/demo1/slideshow.js":[function(require,module,exports) {
+},{"splitting":"../node_modules/splitting/dist/splitting.js"}],"imgYag/AV/background-av.png":[function(require,module,exports) {
+module.exports = "/background-av.48d286fb.png";
+},{}],"js/demo1/slideshow.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6827,6 +6829,8 @@ require("splitting/dist/splitting-cells.css");
 var _gsap = require("gsap");
 
 var _slide = _interopRequireDefault(require("../slide"));
+
+var _backgroundAv = _interopRequireDefault(require("../../imgYag/AV/background-av.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6981,13 +6985,35 @@ var Slideshow = /*#__PURE__*/function () {
         y: "0%",
         opacity: 1,
         ease: "power4"
-      }, "upcoming").to(nextSlide.DOM.el, {
-        backgroundColor: "#3f51b58f",
-        // duration: 3,
-        ease: "Power2.easeInOut"
-      }, "-=1.5");
+      }, "upcoming"); // .to(
+      //   nextSlide.DOM.el,
+      //   {
+      //     backgroundColor: "#3f51b58f",
+      //     // duration: 3,
+      //     ease: "Power2.easeInOut",
+      //   },
+      //   "-=1.5"
+      // );
+      // console.log(
+      //   "nextSlide",
+      //   nextSlide.DOM.el.querySelector("[data-word='Crypto']")
+      // );
+      // console.log("currentSlide", currentSlide.DOM.el);
 
-      console.log("currentSlide.DOM", currentSlide.DOM.el);
+
+      if (nextSlide.DOM.el.querySelector("[data-word='Blue']")) {
+        nextSlide.DOM.el.classList.add("text-bluesquare");
+        document.body.classList.add("background-bluesquare");
+      } else {
+        document.body.classList.remove("background-bluesquare");
+      }
+
+      if (nextSlide.DOM.el.querySelector("[data-word='Auto']")) {
+        document.body.style.background = "url(".concat(_backgroundAv.default, ")");
+      } else {
+        console.log("tu dois cut");
+        document.body.style.background = "unset";
+      }
     }
   }, {
     key: "reverseDirection",
@@ -7000,7 +7026,7 @@ var Slideshow = /*#__PURE__*/function () {
 }();
 
 exports.default = Slideshow;
-},{"splitting/dist/splitting.css":"../node_modules/splitting/dist/splitting.css","splitting/dist/splitting-cells.css":"../node_modules/splitting/dist/splitting-cells.css","gsap":"../node_modules/gsap/index.js","../slide":"js/slide.js"}],"js/demo1/index.js":[function(require,module,exports) {
+},{"splitting/dist/splitting.css":"../node_modules/splitting/dist/splitting.css","splitting/dist/splitting-cells.css":"../node_modules/splitting/dist/splitting-cells.css","gsap":"../node_modules/gsap/index.js","../slide":"js/slide.js","../../imgYag/AV/background-av.png":"imgYag/AV/background-av.png"}],"js/demo1/index.js":[function(require,module,exports) {
 "use strict";
 
 var _utils = require("../utils");
@@ -7069,7 +7095,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49704" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61023" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -390,5 +390,57 @@ a:focus {
   }
 }
 
+.test {
+  color: red;
+}
+
+.testbody {
+  background-color: red;
+}
+
+.background-bluesquare {
+  background-image: linear-gradient(
+    113deg,
+    rgba(21, 125, 251, 0.82),
+    rgba(5, 213, 208, 0.82)
+  );
+}
+
+.text-bluesquare {
+  color: white;
+}
+
+.crypto-title {
+  color: #6581e2;
+}
+
+.bluesquare-title {
+  color: #f9a814;
+}
+
+/* .background-av {
+  background: url("/src/imgYag/AV/background-av.png");
+} */
+
+.auto-title {
+  color: #319fe8;
+}
+
+.devoteam-title {
+  color: #ff808a;
+}
+
+.ania-title {
+  color: #01968d;
+}
+
+.digital-title {
+  color: #fe5f5f;
+}
+
+.regcard-title {
+  color: #987048;
+}
+
 
 /*# sourceMappingURL=/base.98fd6c19.css.map */

@@ -2,6 +2,7 @@ import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
 import { gsap } from "gsap";
 import Slide from "../slide";
+import bckgAv from "../../imgYag/AV/background-av.png";
 
 export default class Slideshow {
   constructor(el) {
@@ -131,18 +132,37 @@ export default class Slideshow {
           ease: "power4",
         },
         "upcoming"
-      )
-
-      .to(
-        nextSlide.DOM.el,
-        {
-          backgroundColor: "#3f51b58f",
-          // duration: 3,
-          ease: "Power2.easeInOut",
-        },
-        "-=1.5"
       );
-    console.log("currentSlide.DOM", currentSlide.DOM.el);
+
+    // .to(
+    //   nextSlide.DOM.el,
+    //   {
+    //     backgroundColor: "#3f51b58f",
+    //     // duration: 3,
+    //     ease: "Power2.easeInOut",
+    //   },
+    //   "-=1.5"
+    // );
+
+    // console.log(
+    //   "nextSlide",
+    //   nextSlide.DOM.el.querySelector("[data-word='Crypto']")
+    // );
+    // console.log("currentSlide", currentSlide.DOM.el);
+
+    if (nextSlide.DOM.el.querySelector("[data-word='Blue']")) {
+      nextSlide.DOM.el.classList.add("text-bluesquare");
+      document.body.classList.add("background-bluesquare");
+    } else {
+      document.body.classList.remove("background-bluesquare");
+    }
+
+    if (nextSlide.DOM.el.querySelector("[data-word='Auto']")) {
+      document.body.style.background = `url(${bckgAv})`;
+    } else {
+      console.log("tu dois cut");
+      document.body.style.background = "unset";
+    }
   }
   reverseDirection(direction) {
     return direction === "next" ? "prev" : "next";
