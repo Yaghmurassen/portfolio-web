@@ -7002,7 +7002,9 @@ var Slideshow = /*#__PURE__*/function () {
           allPath[i].setAttribute("fill", "#319fe8");
           allPath[i].setAttribute("stroke", "#319fe8");
         }
-      } else if (nextSlide.DOM.el.querySelector("[data-word='Digital']")) {
+      }
+
+      if (nextSlide.DOM.el.querySelector("[data-word='Digital']")) {
         document.body.style.background = "url(".concat(_Background.default, ")");
         document.body.style.backgroundPosition = "center";
 
@@ -7011,48 +7013,83 @@ var Slideshow = /*#__PURE__*/function () {
 
           allPath[_i].setAttribute("stroke", "#ff5f5f");
         }
-      } else if (nextSlide.DOM.el.querySelector("[data-word='Blue']")) {
+      }
+
+      if (nextSlide.DOM.el.querySelector("[data-word='Blue']")) {
         nextSlide.DOM.el.classList.add("text-bluesquare");
 
         for (var _i2 = 0; _i2 < allPath.length; _i2++) {
           allPath[_i2].setAttribute("fill", "#f8a815");
 
           allPath[_i2].setAttribute("stroke", "#f8a815");
-
-          console.log("heelooooooo");
         }
 
+        document.body.style.background = null;
+        document.body.classList.remove("background-devoteam");
+        document.body.classList.remove("background-ania");
+        document.body.classList.remove("background-crypto");
+        document.body.classList.remove("background-regcard");
         document.body.classList.add("background-bluesquare");
-      } else if (nextSlide.DOM.el.querySelector("[data-word='Reg']")) {
+      }
+
+      if (nextSlide.DOM.el.querySelector("[data-word='Reg']")) {
         for (var _i3 = 0; _i3 < allPath.length; _i3++) {
           allPath[_i3].setAttribute("fill", "#987148");
 
           allPath[_i3].setAttribute("stroke", "#987148");
         }
-      } else if (nextSlide.DOM.el.querySelector("[data-word='Ania']")) {
+
+        document.body.style.background = null;
+        document.body.classList.remove("background-devoteam");
+        document.body.classList.remove("background-bluesquare");
+        document.body.classList.remove("background-ania");
+        document.body.classList.remove("background-crypto");
+        document.body.classList.add("background-regcard");
+      }
+
+      if (nextSlide.DOM.el.querySelector("[data-word='Ania']")) {
         for (var _i4 = 0; _i4 < allPath.length; _i4++) {
           allPath[_i4].setAttribute("fill", "#01968d");
 
           allPath[_i4].setAttribute("stroke", "#01968d");
         }
-      } else if (nextSlide.DOM.el.querySelector("[data-word='Devo']")) {
+
+        document.body.style.background = null;
+        document.body.classList.remove("background-devoteam");
+        document.body.classList.remove("background-bluesquare");
+        document.body.classList.remove("background-regcard");
+        document.body.classList.remove("background-crypto");
+        document.body.classList.add("background-ania");
+      }
+
+      if (nextSlide.DOM.el.querySelector("[data-word='Devo']")) {
         for (var _i5 = 0; _i5 < allPath.length; _i5++) {
           allPath[_i5].setAttribute("fill", "#ff8089");
 
           allPath[_i5].setAttribute("stroke", "#ff8089");
-
-          document.body.style.background = null;
-          document.body.style.backgroundPosition = null;
         }
-      } else {
+
         document.body.style.background = null;
-        document.body.style.backgroundPosition = null;
+        document.body.classList.remove("background-ania");
+        document.body.classList.remove("background-bluesquare");
+        document.body.classList.remove("background-regcard");
+        document.body.classList.remove("background-crypto");
+        document.body.classList.add("background-devoteam");
+      }
 
+      if (nextSlide.DOM.el.querySelector("[data-word='Crypto']")) {
         for (var _i6 = 0; _i6 < allPath.length; _i6++) {
-          allPath[_i6].setAttribute("fill", "#6581e1");
+          allPath[_i6].setAttribute("fill", "#ff8089");
 
-          allPath[_i6].setAttribute("stroke", "#6581e1");
+          allPath[_i6].setAttribute("stroke", "#ff8089");
         }
+
+        document.body.style.background = null;
+        document.body.classList.remove("background-ania");
+        document.body.classList.remove("background-bluesquare");
+        document.body.classList.remove("background-regcard");
+        document.body.classList.remove("background-devoteam");
+        document.body.classList.add("background-crypto");
       }
     }
   }, {

@@ -149,7 +149,9 @@ export default class Slideshow {
         allPath[i].setAttribute("fill", "#319fe8");
         allPath[i].setAttribute("stroke", "#319fe8");
       }
-    } else if (nextSlide.DOM.el.querySelector("[data-word='Digital']")) {
+    }
+
+    if (nextSlide.DOM.el.querySelector("[data-word='Digital']")) {
       document.body.style.background = `url(${bckgDigital})`;
       document.body.style.backgroundPosition = "center";
 
@@ -157,40 +159,79 @@ export default class Slideshow {
         allPath[i].setAttribute("fill", "#ff5f5f");
         allPath[i].setAttribute("stroke", "#ff5f5f");
       }
-    } else if (nextSlide.DOM.el.querySelector("[data-word='Blue']")) {
+    }
+
+    if (nextSlide.DOM.el.querySelector("[data-word='Blue']")) {
       nextSlide.DOM.el.classList.add("text-bluesquare");
 
       for (let i = 0; i < allPath.length; i++) {
         allPath[i].setAttribute("fill", "#f8a815");
         allPath[i].setAttribute("stroke", "#f8a815");
-        console.log("heelooooooo");
       }
 
+      document.body.style.background = null;
+
+      document.body.classList.remove("background-devoteam");
+      document.body.classList.remove("background-ania");
+      document.body.classList.remove("background-crypto");
+      document.body.classList.remove("background-regcard");
       document.body.classList.add("background-bluesquare");
-    } else if (nextSlide.DOM.el.querySelector("[data-word='Reg']")) {
+    }
+
+    if (nextSlide.DOM.el.querySelector("[data-word='Reg']")) {
       for (let i = 0; i < allPath.length; i++) {
         allPath[i].setAttribute("fill", "#987148");
         allPath[i].setAttribute("stroke", "#987148");
       }
-    } else if (nextSlide.DOM.el.querySelector("[data-word='Ania']")) {
+      document.body.style.background = null;
+
+      document.body.classList.remove("background-devoteam");
+      document.body.classList.remove("background-bluesquare");
+      document.body.classList.remove("background-ania");
+      document.body.classList.remove("background-crypto");
+      document.body.classList.add("background-regcard");
+    }
+
+    if (nextSlide.DOM.el.querySelector("[data-word='Ania']")) {
       for (let i = 0; i < allPath.length; i++) {
         allPath[i].setAttribute("fill", "#01968d");
         allPath[i].setAttribute("stroke", "#01968d");
       }
-    } else if (nextSlide.DOM.el.querySelector("[data-word='Devo']")) {
+      document.body.style.background = null;
+
+      document.body.classList.remove("background-devoteam");
+      document.body.classList.remove("background-bluesquare");
+      document.body.classList.remove("background-regcard");
+      document.body.classList.remove("background-crypto");
+      document.body.classList.add("background-ania");
+    }
+
+    if (nextSlide.DOM.el.querySelector("[data-word='Devo']")) {
       for (let i = 0; i < allPath.length; i++) {
         allPath[i].setAttribute("fill", "#ff8089");
         allPath[i].setAttribute("stroke", "#ff8089");
-        document.body.style.background = null;
-        document.body.style.backgroundPosition = null;
       }
-    } else {
       document.body.style.background = null;
-      document.body.style.backgroundPosition = null;
+
+      document.body.classList.remove("background-ania");
+      document.body.classList.remove("background-bluesquare");
+      document.body.classList.remove("background-regcard");
+      document.body.classList.remove("background-crypto");
+      document.body.classList.add("background-devoteam");
+    }
+
+    if (nextSlide.DOM.el.querySelector("[data-word='Crypto']")) {
       for (let i = 0; i < allPath.length; i++) {
-        allPath[i].setAttribute("fill", "#6581e1");
-        allPath[i].setAttribute("stroke", "#6581e1");
+        allPath[i].setAttribute("fill", "#ff8089");
+        allPath[i].setAttribute("stroke", "#ff8089");
       }
+      document.body.style.background = null;
+
+      document.body.classList.remove("background-ania");
+      document.body.classList.remove("background-bluesquare");
+      document.body.classList.remove("background-regcard");
+      document.body.classList.remove("background-devoteam");
+      document.body.classList.add("background-crypto");
     }
   }
 
