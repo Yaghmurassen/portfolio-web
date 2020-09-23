@@ -38,6 +38,7 @@ export default class Slideshow {
     };
     this.initEvents();
   }
+
   initEvents() {
     this.onClickPrevEv = () => this.navigate("prev");
     this.onClickNextEv = () => this.navigate("next");
@@ -48,6 +49,7 @@ export default class Slideshow {
       this.onClickNextEv()
     );
   }
+
   navigate(direction) {
     if (this.isAnimating) {
       return false;
@@ -135,39 +137,63 @@ export default class Slideshow {
         "upcoming"
       );
 
-    // .to(
-    //   nextSlide.DOM.el,
-    //   {
-    //     backgroundColor: "#3f51b58f",
-    //     // duration: 3,
-    //     ease: "Power2.easeInOut",
-    //   },
-    //   "-=1.5"
-    // );
-
-    // console.log(
-    //   "nextSlide",
-    //   nextSlide.DOM.el.querySelector("[data-word='Crypto']")
-    // );
     // console.log("currentSlide", currentSlide.DOM.el);
+    // console.log("nextSlide", nextSlide.DOM.el);
 
-    if (nextSlide.DOM.el.querySelector("[data-word='Blue']")) {
-      nextSlide.DOM.el.classList.add("text-bluesquare");
-      document.body.classList.add("background-bluesquare");
-    } else {
-      document.body.classList.remove("background-bluesquare");
-    }
+    let allPath = document.getElementsByTagName("path");
 
     if (nextSlide.DOM.el.querySelector("[data-word='Auto']")) {
       document.body.style.background = `url(${bckgAv})`;
+
+      for (let i = 0; i < allPath.length; i++) {
+        allPath[i].setAttribute("fill", "#319fe8");
+        allPath[i].setAttribute("stroke", "#319fe8");
+      }
     } else if (nextSlide.DOM.el.querySelector("[data-word='Digital']")) {
       document.body.style.background = `url(${bckgDigital})`;
       document.body.style.backgroundPosition = "center";
+
+      for (let i = 0; i < allPath.length; i++) {
+        allPath[i].setAttribute("fill", "#ff5f5f");
+        allPath[i].setAttribute("stroke", "#ff5f5f");
+      }
+    } else if (nextSlide.DOM.el.querySelector("[data-word='Blue']")) {
+      nextSlide.DOM.el.classList.add("text-bluesquare");
+
+      for (let i = 0; i < allPath.length; i++) {
+        allPath[i].setAttribute("fill", "#f8a815");
+        allPath[i].setAttribute("stroke", "#f8a815");
+        console.log("heelooooooo");
+      }
+
+      document.body.classList.add("background-bluesquare");
+    } else if (nextSlide.DOM.el.querySelector("[data-word='Reg']")) {
+      for (let i = 0; i < allPath.length; i++) {
+        allPath[i].setAttribute("fill", "#987148");
+        allPath[i].setAttribute("stroke", "#987148");
+      }
+    } else if (nextSlide.DOM.el.querySelector("[data-word='Ania']")) {
+      for (let i = 0; i < allPath.length; i++) {
+        allPath[i].setAttribute("fill", "#01968d");
+        allPath[i].setAttribute("stroke", "#01968d");
+      }
+    } else if (nextSlide.DOM.el.querySelector("[data-word='Devo']")) {
+      for (let i = 0; i < allPath.length; i++) {
+        allPath[i].setAttribute("fill", "#ff8089");
+        allPath[i].setAttribute("stroke", "#ff8089");
+        document.body.style.background = null;
+        document.body.style.backgroundPosition = null;
+      }
     } else {
       document.body.style.background = null;
       document.body.style.backgroundPosition = null;
+      for (let i = 0; i < allPath.length; i++) {
+        allPath[i].setAttribute("fill", "#6581e1");
+        allPath[i].setAttribute("stroke", "#6581e1");
+      }
     }
   }
+
   reverseDirection(direction) {
     return direction === "next" ? "prev" : "next";
   }

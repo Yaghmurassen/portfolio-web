@@ -228,7 +228,7 @@ a:focus {
   left: 0;
   font-size: 15vw;
   font-size: clamp(2rem, 15vw, 14rem);
-  font-weight: 200;
+  font-weight: 400;
   text-transform: uppercase;
   text-align: center;
   line-height: 1;

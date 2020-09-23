@@ -6798,7 +6798,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-// Call the splittingjs to transform the data-splitting texts to spans of chars 
+// Call the splittingjs to transform the data-splitting texts to spans of chars
 (0, _splitting.default)();
 
 var Slide = function Slide(el) {
@@ -6807,8 +6807,8 @@ var Slide = function Slide(el) {
   this.DOM = {
     el: el
   };
-  this.DOM.chars = this.DOM.el.querySelectorAll('.word > .char, .whitespace');
-  this.DOM.imgs = this.DOM.el.querySelectorAll('.slide__img');
+  this.DOM.chars = this.DOM.el.querySelectorAll(".word > .char, .whitespace");
+  this.DOM.imgs = this.DOM.el.querySelectorAll(".slide__img");
 };
 
 exports.default = Slide;
@@ -6989,37 +6989,70 @@ var Slideshow = /*#__PURE__*/function () {
         y: "0%",
         opacity: 1,
         ease: "power4"
-      }, "upcoming"); // .to(
-      //   nextSlide.DOM.el,
-      //   {
-      //     backgroundColor: "#3f51b58f",
-      //     // duration: 3,
-      //     ease: "Power2.easeInOut",
-      //   },
-      //   "-=1.5"
-      // );
-      // console.log(
-      //   "nextSlide",
-      //   nextSlide.DOM.el.querySelector("[data-word='Crypto']")
-      // );
-      // console.log("currentSlide", currentSlide.DOM.el);
+      }, "upcoming"); // console.log("currentSlide", currentSlide.DOM.el);
+      // console.log("nextSlide", nextSlide.DOM.el);
 
 
-      if (nextSlide.DOM.el.querySelector("[data-word='Blue']")) {
-        nextSlide.DOM.el.classList.add("text-bluesquare");
-        document.body.classList.add("background-bluesquare");
-      } else {
-        document.body.classList.remove("background-bluesquare");
-      }
+      var allPath = document.getElementsByTagName("path");
 
       if (nextSlide.DOM.el.querySelector("[data-word='Auto']")) {
         document.body.style.background = "url(".concat(_backgroundAv.default, ")");
+
+        for (var i = 0; i < allPath.length; i++) {
+          allPath[i].setAttribute("fill", "#319fe8");
+          allPath[i].setAttribute("stroke", "#319fe8");
+        }
       } else if (nextSlide.DOM.el.querySelector("[data-word='Digital']")) {
         document.body.style.background = "url(".concat(_Background.default, ")");
         document.body.style.backgroundPosition = "center";
+
+        for (var _i = 0; _i < allPath.length; _i++) {
+          allPath[_i].setAttribute("fill", "#ff5f5f");
+
+          allPath[_i].setAttribute("stroke", "#ff5f5f");
+        }
+      } else if (nextSlide.DOM.el.querySelector("[data-word='Blue']")) {
+        nextSlide.DOM.el.classList.add("text-bluesquare");
+
+        for (var _i2 = 0; _i2 < allPath.length; _i2++) {
+          allPath[_i2].setAttribute("fill", "#f8a815");
+
+          allPath[_i2].setAttribute("stroke", "#f8a815");
+
+          console.log("heelooooooo");
+        }
+
+        document.body.classList.add("background-bluesquare");
+      } else if (nextSlide.DOM.el.querySelector("[data-word='Reg']")) {
+        for (var _i3 = 0; _i3 < allPath.length; _i3++) {
+          allPath[_i3].setAttribute("fill", "#987148");
+
+          allPath[_i3].setAttribute("stroke", "#987148");
+        }
+      } else if (nextSlide.DOM.el.querySelector("[data-word='Ania']")) {
+        for (var _i4 = 0; _i4 < allPath.length; _i4++) {
+          allPath[_i4].setAttribute("fill", "#01968d");
+
+          allPath[_i4].setAttribute("stroke", "#01968d");
+        }
+      } else if (nextSlide.DOM.el.querySelector("[data-word='Devo']")) {
+        for (var _i5 = 0; _i5 < allPath.length; _i5++) {
+          allPath[_i5].setAttribute("fill", "#ff8089");
+
+          allPath[_i5].setAttribute("stroke", "#ff8089");
+
+          document.body.style.background = null;
+          document.body.style.backgroundPosition = null;
+        }
       } else {
         document.body.style.background = null;
         document.body.style.backgroundPosition = null;
+
+        for (var _i6 = 0; _i6 < allPath.length; _i6++) {
+          allPath[_i6].setAttribute("fill", "#6581e1");
+
+          allPath[_i6].setAttribute("stroke", "#6581e1");
+        }
       }
     }
   }, {
@@ -7102,7 +7135,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56128" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50350" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
