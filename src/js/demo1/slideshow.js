@@ -7,6 +7,7 @@ import bckgDigital from "../../imgYag/DigitalIn/Background.png";
 
 export default class Slideshow {
   constructor(el) {
+    const testBluesquare = false;
     this.DOM = { el: el };
 
     // Navigation buttons
@@ -14,6 +15,12 @@ export default class Slideshow {
       prev: this.DOM.el.querySelector(".slides__nav--prev"),
       next: this.DOM.el.querySelector(".slides__nav--next"),
     };
+
+    // See More Buttons
+    this.DOM.seeMore = {
+      see: this.DOM.el.querySelector(".see__more"),
+    };
+
     // Initialize the Slide instances and store that in an array
     this.slides = [];
     [...this.DOM.el.querySelectorAll(".slide")].forEach((slide) =>
@@ -48,6 +55,7 @@ export default class Slideshow {
     this.DOM.navigation.next.addEventListener("click", () =>
       this.onClickNextEv()
     );
+    // this.DOM.seeMore.addEventListener("click", () => {});
   }
 
   navigate(direction) {
@@ -176,6 +184,8 @@ export default class Slideshow {
       document.body.classList.remove("background-crypto");
       document.body.classList.remove("background-regcard");
       document.body.classList.add("background-bluesquare");
+
+      // gsap.to(this.DOM);
     }
 
     if (nextSlide.DOM.el.querySelector("[data-word='Reg']")) {
@@ -237,5 +247,8 @@ export default class Slideshow {
 
   reverseDirection(direction) {
     return direction === "next" ? "prev" : "next";
+  }
+  test() {
+    alert("hello");
   }
 }

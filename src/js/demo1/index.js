@@ -1,6 +1,7 @@
 import { preloadImages, preloadFonts } from "../utils";
 import Cursor from "../cursor";
 import Slideshow from "./slideshow";
+import SeeProject from "./navigateBluesquare";
 
 // Preload  images and fonts
 Promise.all([preloadImages(".slide__img"), preloadFonts("ldj8uhs")]).then(
@@ -11,9 +12,9 @@ Promise.all([preloadImages(".slide__img"), preloadFonts("ldj8uhs")]).then(
     // Initialize custom cursor
     const cursor = new Cursor(document.querySelector(".cursor"));
 
-    // Initialize the slideshow
+    // Initialize the slideshow & the SeeProject
     new Slideshow(document.querySelector(".slides"));
-
+    new SeeProject(document.querySelector(".slides"));
     // mouse cursor hovers
     [
       ...document.querySelectorAll("a"),
