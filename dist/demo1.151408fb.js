@@ -7139,6 +7139,7 @@ var SeeProject = /*#__PURE__*/function () {
     }; // See More Buttons
 
     this.DOM.seeMore = this.DOM.el.querySelector(".see__more");
+    this.back = document.body.querySelector(".go-back");
     this.initEvents();
   }
 
@@ -7154,12 +7155,18 @@ var SeeProject = /*#__PURE__*/function () {
       this.DOM.seeMore.addEventListener("click", function () {
         _this.onClickBtnSeeMore();
       });
+
+      this.onClickBtnBack = function () {
+        return _this.navigateBack();
+      };
+
+      this.back.addEventListener("click", function () {
+        _this.onClickBtnBack();
+      });
     }
   }, {
     key: "navigate",
     value: function navigate() {
-      console.log(this.DOM, document.body.getElementsByClassName(".cursor"));
-
       _gsap.gsap.timeline({
         defaults: {
           duration: 0.8,
@@ -7175,8 +7182,8 @@ var SeeProject = /*#__PURE__*/function () {
       //   visibility: "hidden",
       // })
       .to(this.DOM.el.querySelectorAll(".slides__nav"), {
-        opacity: 0,
-        visibility: "hidden"
+        opacity: 0 // visibility: "hidden",
+
       }, "-=0.8").to(this.DOM.el, {
         width: "unset",
         display: "none"
@@ -7185,6 +7192,32 @@ var SeeProject = /*#__PURE__*/function () {
       }, "-=1").to(document.body.querySelector(".bluesquare"), {
         display: "block" // marginTop: "-100%",
 
+      }, "-=0.3");
+    }
+  }, {
+    key: "navigateBack",
+    value: function navigateBack() {
+      _gsap.gsap.timeline({
+        defaults: {
+          duration: 0.1,
+          ease: "power4.EaseInOut"
+        },
+        // onStart: () => {},
+        onComplete: function onComplete() {
+          window.scrollTo(0, 0);
+        }
+      }) // .addLabel("start", 0)
+      .to(this.DOM.el.querySelector(".slide"), {
+        opacity: 1
+      }).to(this.DOM.el.querySelectorAll(".slides__nav"), {
+        opacity: 1
+      }, "-=0.8").to(this.DOM.el, {
+        width: "100vw",
+        display: "grid"
+      }, "-=1").to(document.body.querySelector(".frame__links"), {
+        display: "block"
+      }, "-=1").to(document.body.querySelector(".bluesquare"), {
+        display: "none"
       }, "-=0.3");
     }
   }]);
