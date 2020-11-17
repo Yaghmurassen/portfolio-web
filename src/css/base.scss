@@ -579,9 +579,9 @@ article {
   margin: unset;
 }
 
-.bluesquare {
-  display: none;
-}
+// .bluesquare {
+//   display: none;
+// }
 
 #social-link {
   display: grid;
@@ -646,4 +646,13 @@ article {
 
 #return svg {
   margin: auto;
+}
+
+.transition-fade {
+  transition: 0.4s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
 }

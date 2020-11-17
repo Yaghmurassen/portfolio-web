@@ -1,27 +1,34 @@
 import { gsap } from "gsap";
+// import Swup from 'swup';
 // gsap.registerPlugin(CSSPlugin);
 
 export default class SeeProject {
   constructor(el) {
     this.DOM = { el: el };
-
     // See More Buttons
     this.DOM.seeMore = this.DOM.el.querySelector(".see__more");
     this.back = document.body.querySelector(".go-back");
-    this.initEvents();
+    // setTimeout(() => {
+      this.initEvents();
+    // }, 1000);
+
   }
 
   initEvents() {
     this.onClickBtnSeeMore = () => this.navigate();
     this.DOM.seeMore.addEventListener("click", () => {
+      console.log('fdef,vfk,vek,"pk,ezkek,');
       this.onClickBtnSeeMore();
     });
 
     this.onClickBtnBack = () => this.navigateBack();
     this.back.addEventListener("click", () => {
+      console.log('fdef,vfk,vek,"pk,ezkek,');
       this.onClickBtnBack();
     });
   }
+
+
 
   navigate() {
     gsap
