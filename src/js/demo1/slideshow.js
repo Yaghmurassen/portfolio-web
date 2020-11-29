@@ -70,8 +70,8 @@ export default class Slideshow {
           ? ++this.current
           : 0
         : this.current > 0
-        ? --this.current
-        : this.slidesTotal - 1;
+          ? --this.current
+          : this.slidesTotal - 1;
     const nextSlide = this.slides[this.current];
 
     gsap
@@ -232,8 +232,8 @@ export default class Slideshow {
 
     if (nextSlide.DOM.el.querySelector("[data-word='Crypto']")) {
       for (let i = 0; i < allPath.length; i++) {
-        allPath[i].setAttribute("fill", "#ff8089");
-        allPath[i].setAttribute("stroke", "#ff8089");
+        allPath[i].setAttribute("fill", "#6581e1");
+        allPath[i].setAttribute("stroke", "#6581e1");
       }
       document.body.style.background = null;
 

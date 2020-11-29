@@ -12,6 +12,7 @@ export default class SeeProject {
   }
 
   initEvents() {
+    console.log(this.DOM.el.querySelector(".see__more"), document.body.querySelector(".go-back"));
     this.onClickBtnSeeMore = () => this.navigate();
     this.DOM.seeMore.addEventListener("click", () => {
       this.onClickBtnSeeMore();
@@ -24,6 +25,7 @@ export default class SeeProject {
   }
 
   navigate() {
+    console.log("helloblarf");
     gsap
       .timeline({
         defaults: { duration: 0.8, ease: "power4.EaseInOut" },
@@ -63,6 +65,7 @@ export default class SeeProject {
       .to(
         document.body.querySelector(".bluesquare"),
         {
+          opacity: 1,
           display: "block",
           // marginTop: "-100%",
         },
@@ -101,7 +104,7 @@ export default class SeeProject {
       .to(
         document.body.querySelector(".frame__links"),
         {
-          display: "block",
+          display: "flex",
         },
         "-=1"
       )
