@@ -25,3 +25,9 @@ Promise.all([preloadImages(".slide__img"), preloadFonts("ldj8uhs")]).then(
     });
   }
 );
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("hello world")
+    new Slideshow(document.querySelector(".slides"));
+    new SeeProject(document.querySelector(".slides"));
+});
