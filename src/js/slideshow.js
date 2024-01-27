@@ -1,13 +1,13 @@
 import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
 import { gsap } from "gsap";
-import Slide from "../slide";
-import bckgAv from "../../imgYag/AV/background-av.png";
-import bckgDigital from "../../imgYag/DigitalIn/Background.png";
+import Slide from "./slide";
+import bckgAv from "../imgYag/AV/background-av.png";
+import bckgDigital from "../imgYag/DigitalIn/Background.png";
+// TODO : add more bckg
 
 export default class Slideshow {
   constructor(el) {
-    const testBluesquare = false;
     this.DOM = { el: el };
 
     // Navigation buttons
@@ -70,8 +70,8 @@ export default class Slideshow {
           ? ++this.current
           : 0
         : this.current > 0
-          ? --this.current
-          : this.slidesTotal - 1;
+        ? --this.current
+        : this.slidesTotal - 1;
     const nextSlide = this.slides[this.current];
 
     gsap
@@ -144,9 +144,6 @@ export default class Slideshow {
         },
         "upcoming"
       );
-
-    // console.log("currentSlide", currentSlide.DOM.el);
-    // console.log("nextSlide", nextSlide.DOM.el);
 
     let allPath = document.getElementsByTagName("path");
 
@@ -247,8 +244,5 @@ export default class Slideshow {
 
   reverseDirection(direction) {
     return direction === "next" ? "prev" : "next";
-  }
-  test() {
-    alert("hello");
   }
 }

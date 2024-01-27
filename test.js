@@ -68,7 +68,6 @@
 //   for (let i = 0; i < allPath.length; i++) {
 //     allPath[i].setAttribute("fill", "#f8a815");
 //     allPath[i].setAttribute("stroke", "#f8a815");
-//     console.log("heelooooooo");
 //   }
 //   document.body.classList.remove("background-devoteam");
 //   document.body.classList.add("background-bluesquare");

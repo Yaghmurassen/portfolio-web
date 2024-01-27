@@ -63,8 +63,15 @@ body {
 a,
 button {
   text-decoration: none;
-  color: var(--color-link);
   outline: none;
+}
+
+button {
+  color: var(--color-link);
+}
+
+a {
+  color: white;
 }
 
 a:hover,
@@ -103,11 +110,11 @@ a:focus {
   font-weight: normal;
 }
 
-.frame__sponsor,
+/* .frame__sponsor,
 .frame__logo,
 .frame__menu {
   display: none;
-}
+} */
 
 .frame__links a {
   margin: 0 1rem;
@@ -132,7 +139,7 @@ a:focus {
 }
 
 .slides {
-  width: 98vw;
+  /* width: 98vw; */
   height: 100vh;
   overflow: hidden;
   position: relative;
@@ -228,7 +235,7 @@ a:focus {
   top: 0;
   left: 0;
   font-size: 15vw;
-  font-size: clamp(2rem, 15vw, 14rem);
+  font-size: clamp(2rem, 11vw, 14rem);
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
