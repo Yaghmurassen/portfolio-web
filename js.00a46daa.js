@@ -7557,10 +7557,10 @@ _createClass(function Slide(el) {
   this.DOM.chars = this.DOM.el.querySelectorAll(".word > .char, .whitespace");
   this.DOM.imgs = this.DOM.el.querySelectorAll(".slide__img");
 });
-},{"splitting":"Qdhu"}],"3l4H":[function(require,module,exports) {
-module.exports = "background-av.48d286fb.png";
-},{}],"b3X4":[function(require,module,exports) {
-module.exports = "Background.bda56739.png";
+},{"splitting":"Qdhu"}],"pvUn":[function(require,module,exports) {
+module.exports = "background-av.62c76b1d.png";
+},{}],"si4c":[function(require,module,exports) {
+module.exports = "Background.bef9cdf8.png";
 },{}],"2ihG":[function(require,module,exports) {
 "use strict";
 
@@ -7577,9 +7577,9 @@ var _gsap = require("gsap");
 
 var _slide = _interopRequireDefault(require("./slide"));
 
-var _backgroundAv = _interopRequireDefault(require("../imgYag/AV/background-av.png"));
+var _backgroundAv = _interopRequireDefault(require("../img/AV/background-av.png"));
 
-var _Background = _interopRequireDefault(require("../imgYag/DigitalIn/Background.png"));
+var _Background = _interopRequireDefault(require("../img/DigitalIn/Background.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -7886,7 +7886,7 @@ function () {
 
   return Slideshow;
 }();
-},{"splitting/dist/splitting.css":"oR66","splitting/dist/splitting-cells.css":"oR66","gsap":"TpQl","./slide":"Drnq","../imgYag/AV/background-av.png":"3l4H","../imgYag/DigitalIn/Background.png":"b3X4"}],"QvaY":[function(require,module,exports) {
+},{"splitting/dist/splitting.css":"oR66","splitting/dist/splitting-cells.css":"oR66","gsap":"TpQl","./slide":"Drnq","../img/AV/background-av.png":"pvUn","../img/DigitalIn/Background.png":"si4c"}],"QvaY":[function(require,module,exports) {
 "use strict";
 
 var _utils = require("./utils");
