@@ -2,8 +2,8 @@ import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
 import { gsap } from "gsap";
 import Slide from "./slide";
-import bckgAv from "../imgYag/AV/background-av.png";
-import bckgDigital from "../imgYag/DigitalIn/Background.png";
+import bckgAv from "../img/AV/background-av.png";
+import bckgDigital from "../img/DigitalIn/Background.png";
 
 export default class Slideshow {
   constructor(el) {
