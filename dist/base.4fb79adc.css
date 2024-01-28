@@ -91,7 +91,7 @@ a:focus {
 
 .frame__logo,
 .frame__social {
-  color: var(--color-text-alt);
+  color: white;
 }
 
 .frame__menu {
@@ -109,11 +109,6 @@ a:focus {
   font-weight: normal;
 }
 
-/* .frame__sponsor,
-.frame__logo,
-.frame__menu {
-  display: none;
-} */
 .frame__links a {
   margin: 0 1rem;
 }
@@ -126,14 +121,6 @@ a:focus {
 .frame__demos::before {
   content: "More demos";
   display: block;
-}
-
-.frame__demos a {
-  margin: 0 1rem;
-}
-
-.frame__demo--current {
-  color: var(--color-text);
 }
 
 .slides {
@@ -188,7 +175,7 @@ a:focus {
 }
 
 .slide__img {
-  opacity: 0.6;
+  /* opacity: 0.6; */
   flex: none;
   height: calc(50% - 1.5rem);
   display: block;
@@ -420,7 +407,12 @@ a:focus {
 }
 
 .regcard-title {
-  color: #987048;
+  color: #d28941;
+}
+
+.carlili-title {
+  /* color: #018657; */
+  color: #f03d18;
 }
 
 .background-bluesquare {
@@ -428,19 +420,23 @@ a:focus {
 }
 
 .background-devoteam {
-  background: linear-gradient(to left, #e53935, #e8ad34);
+  background: linear-gradient(to left, rgba(229, 57, 53, 0.7098039216), rgba(232, 173, 52, 0.6705882353));
 }
 
 .background-ania {
-  background: linear-gradient(to left, #75e535, #5f9148);
+  background: linear-gradient(to left, rgba(53, 89, 229, 0.5215686275), rgba(72, 128, 145, 0.831372549));
 }
 
 .background-regcard {
-  background: linear-gradient(to left, #5b35e5, #807359);
+  background: linear-gradient(to left, rgba(229, 53, 53, 0.6901960784), rgba(89, 95, 128, 0.7215686275));
 }
 
 .background-crypto {
-  background: linear-gradient(to left, #352769, #ca3dc3);
+  background: linear-gradient(to left, rgba(39, 96, 105, 0.5098039216), rgba(202, 61, 195, 0.3607843137));
+}
+
+.background-carlili {
+  background: radial-gradient(circle, rgb(1, 134, 87) 20%, rgb(0, 0, 0) 90%);
 }
 
 #presentation {

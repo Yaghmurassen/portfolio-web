@@ -92,7 +92,7 @@ a:focus {
 
 .frame__logo,
 .frame__social {
-  color: var(--color-text-alt);
+  color: white;
 }
 
 .frame__menu {
@@ -110,12 +110,6 @@ a:focus {
   font-weight: normal;
 }
 
-/* .frame__sponsor,
-.frame__logo,
-.frame__menu {
-  display: none;
-} */
-
 .frame__links a {
   margin: 0 1rem;
 }
@@ -128,14 +122,6 @@ a:focus {
 .frame__demos::before {
   content: "More demos";
   display: block;
-}
-
-.frame__demos a {
-  margin: 0 1rem;
-}
-
-.frame__demo--current {
-  color: var(--color-text);
 }
 
 .slides {
@@ -185,13 +171,12 @@ a:focus {
   align-items: center;
   justify-content: center;
   align-self: center;
-  // transform: rotate(-22.5deg);
   transform: rotate(-10deg);
   transform-origin: 50% 50%;
 }
 
 .slide__img {
-  opacity: 0.6;
+  /* opacity: 0.6; */
   flex: none;
   height: calc(50% - 1.5rem);
   display: block;
@@ -427,7 +412,12 @@ a:focus {
 }
 
 .regcard-title {
-  color: #987048;
+  color: #d28941;
+}
+
+.carlili-title {
+  /* color: #018657; */
+  color: #f03d18;
 }
 
 .background-bluesquare {
@@ -439,19 +429,23 @@ a:focus {
 }
 
 .background-devoteam {
-  background: linear-gradient(to left, #e53935, #e8ad34);
+  background: linear-gradient(to left, #e53935b5, #e8ad34ab);
 }
 
 .background-ania {
-  background: linear-gradient(to left, #75e535, #5f9148);
+  background: linear-gradient(to left, #3559e585, #488091d4);
 }
 
 .background-regcard {
-  background: linear-gradient(to left, #5b35e5, #807359);
+  background: linear-gradient(to left, #e53535b0, #595f80b8);
 }
 
 .background-crypto {
-  background: linear-gradient(to left, #352769, #ca3dc3);
+  background: linear-gradient(to left, #27606982, #ca3dc35c);
+}
+
+.background-carlili {
+  background: radial-gradient(circle, rgb(1, 134, 87) 20%, rgb(0, 0, 0) 90%);
 }
 
 #presentation {

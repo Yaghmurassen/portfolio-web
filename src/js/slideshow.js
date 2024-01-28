@@ -4,11 +4,22 @@ import { gsap } from "gsap";
 import Slide from "./slide";
 import bckgAv from "../imgYag/AV/background-av.png";
 import bckgDigital from "../imgYag/DigitalIn/Background.png";
-// TODO : add more bckg
 
 export default class Slideshow {
   constructor(el) {
     this.DOM = { el: el };
+
+    // this.window.addEventListener("load", (e) => {
+    //   const currentSlide = this.slides[this.current];
+
+    //   console.log("currentSlide :::: ", currentSlide, e);
+    // });
+
+    // document.body.addEventListener("load", (e) => {
+    //   const currentSlide = this.slides[this.current];
+
+    //   console.log("currentSlide :::: ", currentSlide, e);
+    // });
 
     // Navigation buttons
     this.DOM.navigation = {
@@ -49,9 +60,11 @@ export default class Slideshow {
   initEvents() {
     this.onClickPrevEv = () => this.navigate("prev");
     this.onClickNextEv = () => this.navigate("next");
+
     this.DOM.navigation.prev.addEventListener("click", () =>
       this.onClickPrevEv()
     );
+
     this.DOM.navigation.next.addEventListener("click", () =>
       this.onClickNextEv()
     );
@@ -64,6 +77,7 @@ export default class Slideshow {
     }
 
     const currentSlide = this.slides[this.current];
+
     this.current =
       direction === "next"
         ? this.current < this.slidesTotal - 1
@@ -180,9 +194,8 @@ export default class Slideshow {
       document.body.classList.remove("background-ania");
       document.body.classList.remove("background-crypto");
       document.body.classList.remove("background-regcard");
+      document.body.classList.remove("background-carlili");
       document.body.classList.add("background-bluesquare");
-
-      // gsap.to(this.DOM);
     }
 
     if (nextSlide.DOM.el.querySelector("[data-word='Reg']")) {
@@ -196,7 +209,23 @@ export default class Slideshow {
       document.body.classList.remove("background-bluesquare");
       document.body.classList.remove("background-ania");
       document.body.classList.remove("background-crypto");
+      document.body.classList.remove("background-carlili");
       document.body.classList.add("background-regcard");
+    }
+    // Add behaviour for Carlili slide
+    if (nextSlide.DOM.el.querySelector("[data-word='Carlili']")) {
+      for (let i = 0; i < allPath.length; i++) {
+        allPath[i].setAttribute("fill", "#018657");
+        allPath[i].setAttribute("stroke", "#018657");
+      }
+      document.body.style.background = null;
+
+      document.body.classList.remove("background-devoteam");
+      document.body.classList.remove("background-bluesquare");
+      document.body.classList.remove("background-ania");
+      document.body.classList.remove("background-crypto");
+      document.body.classList.remove("background-regcard");
+      document.body.classList.add("background-carlili");
     }
 
     if (nextSlide.DOM.el.querySelector("[data-word='Ania']")) {
@@ -210,6 +239,7 @@ export default class Slideshow {
       document.body.classList.remove("background-bluesquare");
       document.body.classList.remove("background-regcard");
       document.body.classList.remove("background-crypto");
+      document.body.classList.remove("background-carlili");
       document.body.classList.add("background-ania");
     }
 
@@ -224,6 +254,7 @@ export default class Slideshow {
       document.body.classList.remove("background-bluesquare");
       document.body.classList.remove("background-regcard");
       document.body.classList.remove("background-crypto");
+      document.body.classList.remove("background-carlili");
       document.body.classList.add("background-devoteam");
     }
 
@@ -238,6 +269,7 @@ export default class Slideshow {
       document.body.classList.remove("background-bluesquare");
       document.body.classList.remove("background-regcard");
       document.body.classList.remove("background-devoteam");
+      document.body.classList.remove("background-carlili");
       document.body.classList.add("background-crypto");
     }
   }
