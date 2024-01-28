@@ -411,8 +411,8 @@ a:focus {
 }
 
 .carlili-title {
-  /* color: #018657; */
-  color: #f03d18;
+  /* color: #f03d18; */
+  color: #ede0c8;
 }
 
 .background-bluesquare {
@@ -648,6 +648,19 @@ article {
 
 html.is-animating .transition-fade {
   opacity: 0;
+}
+
+@media screen and (max-width: 847px) {
+  .frame__social,
+  .frame__inner,
+  .frame__menu,
+  a {
+    color: black;
+  }
+  .frame__title,
+  a {
+    font-weight: bold;
+  }
 }
 
 /*# sourceMappingURL=/base.4fb79adc.css.map */

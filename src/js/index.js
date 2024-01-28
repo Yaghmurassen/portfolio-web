@@ -25,16 +25,10 @@ Promise.all([preloadImages(".slide__img")]).then(() => {
   });
 });
 
-let currentSlideH2 = document.querySelector(".slide--current > h2");
-
 document.addEventListener("DOMContentLoaded", () => {
   new Slideshow(document.querySelector(".slides"));
-
-  if (currentSlideH2.classList.contains("carlili-title")) {
-    document.body.classList.add("background-carlili");
-  } else {
-    document.body.classList.remove("background-carlili");
-  }
+  // Initialize the slideshow with the Carlili's background
+  document.body.classList.add("background-carlili");
 
   // new SeeProject(document.querySelector(".slides"));
 });

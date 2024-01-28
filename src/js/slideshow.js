@@ -215,8 +215,8 @@ export default class Slideshow {
     // Add behaviour for Carlili slide
     if (nextSlide.DOM.el.querySelector("[data-word='Carlili']")) {
       for (let i = 0; i < allPath.length; i++) {
-        allPath[i].setAttribute("fill", "#018657");
-        allPath[i].setAttribute("stroke", "#018657");
+        allPath[i].setAttribute("fill", "#ede0c8");
+        allPath[i].setAttribute("stroke", "#ede0c8");
       }
       document.body.style.background = null;
 
