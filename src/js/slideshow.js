@@ -5,21 +5,11 @@ import Slide from "./slide";
 import bckgAv from "../img/AV/background-av.png";
 import bckgDigital from "../img/DigitalIn/Background.png";
 
+let allPath = document.getElementsByTagName("path");
+
 export default class Slideshow {
   constructor(el) {
     this.DOM = { el: el };
-
-    // this.window.addEventListener("load", (e) => {
-    //   const currentSlide = this.slides[this.current];
-
-    //   console.log("currentSlide :::: ", currentSlide, e);
-    // });
-
-    // document.body.addEventListener("load", (e) => {
-    //   const currentSlide = this.slides[this.current];
-
-    //   console.log("currentSlide :::: ", currentSlide, e);
-    // });
 
     // Navigation buttons
     this.DOM.navigation = {
@@ -68,6 +58,14 @@ export default class Slideshow {
     this.DOM.navigation.next.addEventListener("click", () =>
       this.onClickNextEv()
     );
+
+    if (document.body.clientWidth < 800) {
+      for (let i = 0; i < allPath.length; i++) {
+        allPath[0].setAttribute("d", "M38 10H6");
+        allPath[2].setAttribute("d", "M94 10H60");
+        allPath[3].style.transform = "translateX(1rem)";
+      }
+    }
     // this.DOM.seeMore.addEventListener("click", () => {});
   }
 
@@ -159,7 +157,11 @@ export default class Slideshow {
         "upcoming"
       );
 
-    let allPath = document.getElementsByTagName("path");
+    // let allPath = document.getElementsByTagName("path");
+    let frameTitle = document.getElementsByClassName("frame__title")[0],
+      frameMenu = document.getElementsByClassName("frame__menu")[0],
+      frameSocial = document.getElementsByClassName("frame__social")[0],
+      frameSponsor = document.getElementsByClassName("frame__sponsor")[0];
 
     if (nextSlide.DOM.el.querySelector("[data-word='Auto']")) {
       document.body.style.background = `url(${bckgAv})`;
@@ -167,6 +169,13 @@ export default class Slideshow {
       for (let i = 0; i < allPath.length; i++) {
         allPath[i].setAttribute("fill", "#319fe8");
         allPath[i].setAttribute("stroke", "#319fe8");
+      }
+      if (document.body.clientWidth < 800) {
+        console.log("frameTitleframeTitleframeTitle ", frameTitle);
+        frameTitle.style.color = "white";
+        frameMenu.style.color = "white";
+        frameSocial.style.color = "white";
+        frameSponsor.style.color = "white";
       }
     }
 
@@ -177,6 +186,13 @@ export default class Slideshow {
       for (let i = 0; i < allPath.length; i++) {
         allPath[i].setAttribute("fill", "#ff5f5f");
         allPath[i].setAttribute("stroke", "#ff5f5f");
+      }
+
+      if (document.body.clientWidth < 800) {
+        frameTitle.style.color = "white";
+        frameMenu.style.color = "white";
+        frameSocial.style.color = "white";
+        frameSponsor.style.color = "white";
       }
     }
 
@@ -200,8 +216,8 @@ export default class Slideshow {
 
     if (nextSlide.DOM.el.querySelector("[data-word='Reg']")) {
       for (let i = 0; i < allPath.length; i++) {
-        allPath[i].setAttribute("fill", "#987148");
-        allPath[i].setAttribute("stroke", "#987148");
+        allPath[i].setAttribute("fill", "#d28941");
+        allPath[i].setAttribute("stroke", "#d28941");
       }
       document.body.style.background = null;
 
@@ -226,6 +242,13 @@ export default class Slideshow {
       document.body.classList.remove("background-crypto");
       document.body.classList.remove("background-regcard");
       document.body.classList.add("background-carlili");
+
+      if (document.body.clientWidth < 800) {
+        frameTitle.style.color = "white";
+        frameMenu.style.color = "white";
+        frameSocial.style.color = "white";
+        frameSponsor.style.color = "white";
+      }
     }
 
     if (nextSlide.DOM.el.querySelector("[data-word='Ania']")) {
@@ -248,6 +271,7 @@ export default class Slideshow {
         allPath[i].setAttribute("fill", "#ff8089");
         allPath[i].setAttribute("stroke", "#ff8089");
       }
+
       document.body.style.background = null;
 
       document.body.classList.remove("background-ania");
@@ -263,6 +287,7 @@ export default class Slideshow {
         allPath[i].setAttribute("fill", "#6581e1");
         allPath[i].setAttribute("stroke", "#6581e1");
       }
+
       document.body.style.background = null;
 
       document.body.classList.remove("background-ania");
