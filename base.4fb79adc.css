@@ -88,6 +88,22 @@ a:focus {
   top: 0;
   left: 0;
 }
+@media screen and (max-width: 901px) {
+  .frame {
+    display: none;
+  }
+}
+.frame.mobile {
+  display: flex;
+  background: white;
+  align-content: center;
+  justify-content: space-between;
+}
+@media screen and (min-width: 900px) {
+  .frame.mobile {
+    display: none;
+  }
+}
 
 .frame__logo,
 .frame__social {
@@ -113,14 +129,16 @@ a:focus {
   margin: 0 1rem;
 }
 
-.frame__demos {
-  margin: 1rem 0 0 0;
-  position: relative;
+.frame__container {
+  align-self: center;
+  display: flex;
+  gap: 1dvh;
 }
 
-.frame__demos::before {
-  content: "More demos";
-  display: block;
+.frame__sponsor img,
+.frame__menu img,
+.frame__social img {
+  max-width: clamp(20px, 1rem, 30px);
 }
 
 .slides {
@@ -259,7 +277,7 @@ a:focus {
   cursor: pointer;
   background: none;
   border: 0;
-  width: 90px;
+  width: 100px;
   height: 20px;
   padding: 0;
   margin: 0;
@@ -294,7 +312,7 @@ a:focus {
   display: none;
 }
 
-@media screen and (min-width: 53em) {
+@media screen and (min-width: 901px) {
   .frame {
     position: fixed;
     text-align: left;
@@ -411,7 +429,6 @@ a:focus {
 }
 
 .carlili-title {
-  /* color: #f03d18; */
   color: #ede0c8;
 }
 
@@ -650,15 +667,19 @@ html.is-animating .transition-fade {
   opacity: 0;
 }
 
-@media screen and (max-width: 847px) {
+@media screen and (max-width: 900px) {
   .frame__social,
   .frame__inner,
   .frame__menu,
   a {
     color: black;
+    align-self: center;
+    display: flex;
   }
   .frame__title,
   a {
     font-weight: bold;
+    font-size: 12px;
+    margin: unset;
   }
 }

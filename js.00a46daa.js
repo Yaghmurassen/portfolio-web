@@ -7607,6 +7607,8 @@ function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" 
 
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 
+var allPath = document.getElementsByTagName("path");
+
 var Slideshow = exports.default =
 /*#__PURE__*/
 function () {
@@ -7617,15 +7619,7 @@ function () {
 
     this.DOM = {
       el: el
-    }; // this.window.addEventListener("load", (e) => {
-    //   const currentSlide = this.slides[this.current];
-    //   console.log("currentSlide :::: ", currentSlide, e);
-    // });
-    // document.body.addEventListener("load", (e) => {
-    //   const currentSlide = this.slides[this.current];
-    //   console.log("currentSlide :::: ", currentSlide, e);
-    // });
-    // Navigation buttons
+    }; // Navigation buttons
 
     this.DOM.navigation = {
       prev: this.DOM.el.querySelector(".slides__nav--prev"),
@@ -7679,7 +7673,16 @@ function () {
       });
       this.DOM.navigation.next.addEventListener("click", function () {
         return _this2.onClickNextEv();
-      }); // this.DOM.seeMore.addEventListener("click", () => {});
+      });
+
+      if (document.body.clientWidth < 800) {
+        for (var i = 0; i < allPath.length; i++) {
+          allPath[0].setAttribute("d", "M38 10H6");
+          allPath[2].setAttribute("d", "M94 10H60");
+          allPath[3].style.transform = "translateX(1rem)";
+        }
+      } // this.DOM.seeMore.addEventListener("click", () => {});
+
     }
   }, {
     key: "navigate",
@@ -7754,9 +7757,13 @@ function () {
         y: "0%",
         opacity: 1,
         ease: "power4"
-      }, "upcoming");
+      }, "upcoming"); // let allPath = document.getElementsByTagName("path");
 
-      var allPath = document.getElementsByTagName("path");
+
+      var frameTitle = document.getElementsByClassName("frame__title")[0],
+          frameMenu = document.getElementsByClassName("frame__menu")[0],
+          frameSocial = document.getElementsByClassName("frame__social")[0],
+          frameSponsor = document.getElementsByClassName("frame__sponsor")[0];
 
       if (nextSlide.DOM.el.querySelector("[data-word='Auto']")) {
         document.body.style.background = "url(".concat(_backgroundAv.default, ")");
@@ -7764,6 +7771,14 @@ function () {
         for (var i = 0; i < allPath.length; i++) {
           allPath[i].setAttribute("fill", "#319fe8");
           allPath[i].setAttribute("stroke", "#319fe8");
+        }
+
+        if (document.body.clientWidth < 800) {
+          console.log("frameTitleframeTitleframeTitle ", frameTitle);
+          frameTitle.style.color = "white";
+          frameMenu.style.color = "white";
+          frameSocial.style.color = "white";
+          frameSponsor.style.color = "white";
         }
       }
 
@@ -7775,6 +7790,13 @@ function () {
           allPath[_i2].setAttribute("fill", "#ff5f5f");
 
           allPath[_i2].setAttribute("stroke", "#ff5f5f");
+        }
+
+        if (document.body.clientWidth < 800) {
+          frameTitle.style.color = "white";
+          frameMenu.style.color = "white";
+          frameSocial.style.color = "white";
+          frameSponsor.style.color = "white";
         }
       }
 
@@ -7798,9 +7820,9 @@ function () {
 
       if (nextSlide.DOM.el.querySelector("[data-word='Reg']")) {
         for (var _i6 = 0; _i6 < allPath.length; _i6++) {
-          allPath[_i6].setAttribute("fill", "#987148");
+          allPath[_i6].setAttribute("fill", "#d28941");
 
-          allPath[_i6].setAttribute("stroke", "#987148");
+          allPath[_i6].setAttribute("stroke", "#d28941");
         }
 
         document.body.style.background = null;
@@ -7827,6 +7849,13 @@ function () {
         document.body.classList.remove("background-crypto");
         document.body.classList.remove("background-regcard");
         document.body.classList.add("background-carlili");
+
+        if (document.body.clientWidth < 800) {
+          frameTitle.style.color = "white";
+          frameMenu.style.color = "white";
+          frameSocial.style.color = "white";
+          frameSponsor.style.color = "white";
+        }
       }
 
       if (nextSlide.DOM.el.querySelector("[data-word='Ania']")) {
